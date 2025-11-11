@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Headings */
+.gamename {
+    font-size: 3rem;
+    color: #00f7ff;
+    text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+    margin-bottom: 0.5rem;
+}
+
+.heading2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #f9f871;
+    text-shadow: 0 0 5px #fff;
+}
+
+/* Button Container */
+.btn-container {
+    display: grid;
+    grid-template-columns: repeat(2, 120px);
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Buttons */
+.btn {
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    border: 4px solid #111;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px white;
+}
+
+.red { background-color: #e74c3c; }
+.green { background-color: #2ecc71; }
+.yellow { background-color: #f1c40f; }
+.purple { background-color: #9b59b6; }
+
+.flash {
+    background-color: white !important;
+    box-shadow: 0 0 25px white !important;
+}
+
+.userflash {
+    background-color: #00ff00 !important;
+    box-shadow: 0 0 20px lime !important;
+}
+
+/* Level Info */
+h3 {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #dcdcdc;
+}
+
+/* Game Over Effects */
+body.game-over {
+    animation: shake 0.5s ease-in-out, glowRed 1s ease-in-out;
+    background-color: #8e0e00;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes glowRed {
+    0% { box-shadow: 0 0 0px red; }
+    100% { box-shadow: 0 0 60px red; }
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .btn-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gamename {
+        font-size: 2.2rem;
+    }
+
+    .heading2 {
+        font-size: 1rem;
+    }
+
+    .btn {
+        width: 100px;
+        height: 100px;
+    }
+}
